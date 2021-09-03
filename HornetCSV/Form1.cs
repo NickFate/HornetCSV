@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HornetCSV
 {
-    public partial class Form1 : Form
+    public partial class MainAppView : Form
     {
-        public Form1()
+        public MainAppView()
         {
             InitializeComponent();
         }
