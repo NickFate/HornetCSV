@@ -29,7 +29,7 @@ namespace HornetCSV
             string path;
 
             OpenFileDialog file = new OpenFileDialog();
-            file.Title = "Выберете .csv файл";
+            file.Title = "Выберите .csv файл";
             file.Filter = "Файлы *.csv|*.csv";
             if (file.ShowDialog() == DialogResult.OK)
             {
@@ -47,7 +47,7 @@ namespace HornetCSV
             string path;
 
             SaveFileDialog file = new SaveFileDialog();
-            file.Title = "Выберете .csv файл";
+            file.Title = "Выберите .csv файл";
             file.Filter = "Файлы *.csv|*.csv";
             if (file.ShowDialog() == DialogResult.OK)
             {
