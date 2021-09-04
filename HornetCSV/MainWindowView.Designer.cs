@@ -30,14 +30,14 @@ namespace HornetCSV
         private void InitializeComponent()
         {
             this.SplitOnView = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OpenButton = new System.Windows.Forms.Button();
+            this.AppTable = new System.Windows.Forms.DataGridView();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.OpenButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitOnView)).BeginInit();
             this.SplitOnView.Panel1.SuspendLayout();
             this.SplitOnView.Panel2.SuspendLayout();
             this.SplitOnView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppTable)).BeginInit();
             this.SuspendLayout();
             // 
             // SplitOnView
@@ -50,7 +50,7 @@ namespace HornetCSV
             // 
             // SplitOnView.Panel1
             // 
-            this.SplitOnView.Panel1.Controls.Add(this.dataGridView1);
+            this.SplitOnView.Panel1.Controls.Add(this.AppTable);
             // 
             // SplitOnView.Panel2
             // 
@@ -60,23 +60,14 @@ namespace HornetCSV
             this.SplitOnView.SplitterDistance = 1000;
             this.SplitOnView.TabIndex = 0;
             // 
-            // dataGridView1
+            // AppTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 681);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // OpenButton
-            // 
-            this.OpenButton.Location = new System.Drawing.Point(3, 646);
-            this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(254, 23);
-            this.OpenButton.TabIndex = 0;
-            this.OpenButton.Text = "Open";
-            this.OpenButton.UseVisualStyleBackColor = true;
+            this.AppTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AppTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AppTable.Location = new System.Drawing.Point(0, 0);
+            this.AppTable.Name = "AppTable";
+            this.AppTable.Size = new System.Drawing.Size(1000, 681);
+            this.AppTable.TabIndex = 0;
             // 
             // SaveButton
             // 
@@ -86,6 +77,17 @@ namespace HornetCSV
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // OpenButton
+            // 
+            this.OpenButton.Location = new System.Drawing.Point(3, 646);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(254, 23);
+            this.OpenButton.TabIndex = 0;
+            this.OpenButton.Text = "Open";
+            this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // MainAppView
             // 
@@ -99,7 +101,7 @@ namespace HornetCSV
             this.SplitOnView.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitOnView)).EndInit();
             this.SplitOnView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,7 +109,7 @@ namespace HornetCSV
         #endregion
 
         private System.Windows.Forms.SplitContainer SplitOnView;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView AppTable;
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button SaveButton;
     }
