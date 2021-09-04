@@ -21,6 +21,10 @@ namespace HornetCSV
         {
             InitializeComponent();
             worker = new CSVTableWorker();
+
+            AppTable.AllowUserToDeleteRows = true;
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            AppTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -56,6 +60,13 @@ namespace HornetCSV
             }
 
             
+        }
+
+        private void AddColumnButton_Click(object sender, EventArgs e)
+        {
+            DataColumn c = new DataColumn();
+            c.ColumnName = (data.Columns.Count + 1).ToString();
+            data.Columns.Add(c);
         }
     }
 }

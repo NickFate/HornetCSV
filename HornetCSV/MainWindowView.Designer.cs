@@ -33,6 +33,7 @@ namespace HornetCSV
             this.AppTable = new System.Windows.Forms.DataGridView();
             this.SaveButton = new System.Windows.Forms.Button();
             this.OpenButton = new System.Windows.Forms.Button();
+            this.AddColumnButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitOnView)).BeginInit();
             this.SplitOnView.Panel1.SuspendLayout();
             this.SplitOnView.Panel2.SuspendLayout();
@@ -54,6 +55,7 @@ namespace HornetCSV
             // 
             // SplitOnView.Panel2
             // 
+            this.SplitOnView.Panel2.Controls.Add(this.AddColumnButton);
             this.SplitOnView.Panel2.Controls.Add(this.SaveButton);
             this.SplitOnView.Panel2.Controls.Add(this.OpenButton);
             this.SplitOnView.Size = new System.Drawing.Size(1264, 681);
@@ -71,6 +73,8 @@ namespace HornetCSV
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Location = new System.Drawing.Point(3, 617);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(254, 23);
@@ -81,6 +85,8 @@ namespace HornetCSV
             // 
             // OpenButton
             // 
+            this.OpenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenButton.Location = new System.Drawing.Point(3, 646);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(254, 23);
@@ -88,6 +94,18 @@ namespace HornetCSV
             this.OpenButton.Text = "Open";
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            // 
+            // AddColumnButton
+            // 
+            this.AddColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddColumnButton.Location = new System.Drawing.Point(3, 588);
+            this.AddColumnButton.Name = "AddColumnButton";
+            this.AddColumnButton.Size = new System.Drawing.Size(254, 23);
+            this.AddColumnButton.TabIndex = 2;
+            this.AddColumnButton.Text = "Add column";
+            this.AddColumnButton.UseVisualStyleBackColor = true;
+            this.AddColumnButton.Click += new System.EventHandler(this.AddColumnButton_Click);
             // 
             // MainAppView
             // 
@@ -112,6 +130,7 @@ namespace HornetCSV
         private System.Windows.Forms.DataGridView AppTable;
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button AddColumnButton;
     }
 }
 
