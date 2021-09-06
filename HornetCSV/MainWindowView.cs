@@ -42,9 +42,12 @@ namespace HornetCSV
             
             string path;
 
-            OpenFileDialog file = new OpenFileDialog();
-            file.Title = "Выберите .csv файл";
-            file.Filter = "Файлы *.csv|*.csv";
+            OpenFileDialog file = new OpenFileDialog
+            {
+                Title = "Выберите .csv файл",
+                Filter = "Файлы *.csv|*.csv"
+            }
+            ;
             if (file.ShowDialog() == DialogResult.OK)
             {
                 AddColumnButton.Visible = true;
@@ -70,9 +73,11 @@ namespace HornetCSV
 
             string path;
 
-            SaveFileDialog file = new SaveFileDialog();
-            file.Title = "Выберите .csv файл";
-            file.Filter = "Файлы *.csv|*.csv";
+            SaveFileDialog file = new SaveFileDialog
+            {
+                Title = "Выберите .csv файл",
+                Filter = "Файлы *.csv|*.csv"
+            };
             if (file.ShowDialog() == DialogResult.OK)
             {
                 path = file.FileName;
