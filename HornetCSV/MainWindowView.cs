@@ -25,11 +25,12 @@ namespace HornetCSV
             AppTable.AllowUserToDeleteRows = true;
             AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AppTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            AddColumnButton.Enabled = false;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-
+            
             string path;
 
             OpenFileDialog file = new OpenFileDialog();
@@ -37,6 +38,7 @@ namespace HornetCSV
             file.Filter = "Файлы *.csv|*.csv";
             if (file.ShowDialog() == DialogResult.OK)
             {
+                AddColumnButton.Enabled = true;
                 path = file.FileName;
                 data = worker.OpenTable(path);
                 AppTable.DataSource = data;
@@ -65,7 +67,7 @@ namespace HornetCSV
         private void AddColumnButton_Click(object sender, EventArgs e)
         {
             DataColumn c = new DataColumn();
-            c.ColumnName = (data.Columns.Count + 1).ToString();
+            c.ColumnName = (data.Columns.Count).ToString();
             data.Columns.Add(c);
         }
     }
