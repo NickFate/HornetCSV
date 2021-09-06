@@ -34,7 +34,9 @@ namespace HornetCSV
             this.AddColumnButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.OpenButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RemoveColumnButton = new System.Windows.Forms.Button();
+            this.RemoveRowButton = new System.Windows.Forms.Button();
+            this.AddRowButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitOnView)).BeginInit();
             this.SplitOnView.Panel1.SuspendLayout();
             this.SplitOnView.Panel2.SuspendLayout();
@@ -56,7 +58,9 @@ namespace HornetCSV
             // 
             // SplitOnView.Panel2
             // 
-            this.SplitOnView.Panel2.Controls.Add(this.button1);
+            this.SplitOnView.Panel2.Controls.Add(this.AddRowButton);
+            this.SplitOnView.Panel2.Controls.Add(this.RemoveRowButton);
+            this.SplitOnView.Panel2.Controls.Add(this.RemoveColumnButton);
             this.SplitOnView.Panel2.Controls.Add(this.AddColumnButton);
             this.SplitOnView.Panel2.Controls.Add(this.SaveButton);
             this.SplitOnView.Panel2.Controls.Add(this.OpenButton);
@@ -109,14 +113,41 @@ namespace HornetCSV
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
-            // button1
+            // RemoveColumnButton
             // 
-            this.button1.Location = new System.Drawing.Point(3, 559);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.RemoveColumnButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveColumnButton.Location = new System.Drawing.Point(3, 559);
+            this.RemoveColumnButton.Name = "RemoveColumnButton";
+            this.RemoveColumnButton.Size = new System.Drawing.Size(254, 23);
+            this.RemoveColumnButton.TabIndex = 3;
+            this.RemoveColumnButton.Text = "Remove column";
+            this.RemoveColumnButton.UseVisualStyleBackColor = true;
+            this.RemoveColumnButton.Click += new System.EventHandler(this.RemoveColumnButton_Click);
+            // 
+            // RemoveRowButton
+            // 
+            this.RemoveRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveRowButton.Location = new System.Drawing.Point(3, 501);
+            this.RemoveRowButton.Name = "RemoveRowButton";
+            this.RemoveRowButton.Size = new System.Drawing.Size(254, 23);
+            this.RemoveRowButton.TabIndex = 4;
+            this.RemoveRowButton.Text = "Remove row";
+            this.RemoveRowButton.UseVisualStyleBackColor = true;
+            this.RemoveRowButton.Click += new System.EventHandler(this.RemoveRowButton_Click);
+            // 
+            // AddRowButton
+            // 
+            this.AddRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddRowButton.Location = new System.Drawing.Point(3, 530);
+            this.AddRowButton.Name = "AddRowButton";
+            this.AddRowButton.Size = new System.Drawing.Size(254, 23);
+            this.AddRowButton.TabIndex = 5;
+            this.AddRowButton.Text = "Add row";
+            this.AddRowButton.UseVisualStyleBackColor = true;
+            this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
             // MainAppView
             // 
@@ -142,7 +173,9 @@ namespace HornetCSV
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button AddColumnButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RemoveColumnButton;
+        private System.Windows.Forms.Button AddRowButton;
+        private System.Windows.Forms.Button RemoveRowButton;
     }
 }
 
