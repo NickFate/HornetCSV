@@ -26,20 +26,23 @@ namespace HornetCSV.Modules
             }
             
             
-            for (int i = 0; i < ms[0].Length; i++)
+            if (ms.Count > 0)
             {
-                DataColumn c = new DataColumn();
-                c.ColumnName = i.ToString();
-                data.Columns.Add(c);
+                for (int i = 0; i < ms[0].Length; i++)
+                {
+                    DataColumn c = new DataColumn();
+                    c.ColumnName = i.ToString();
+                    data.Columns.Add(c);
+                }
+
+                foreach (string[] i in ms)
+                {
+                    DataRow row = data.NewRow();
+                    row.ItemArray = i;
+                    data.Rows.Add(row);
+                }
             }
             
-            foreach (string[] i in ms)
-            {
-                DataRow row = data.NewRow();
-                row.ItemArray = i;
-                data.Rows.Add(row);
-            }
-
             return data;
         }
 

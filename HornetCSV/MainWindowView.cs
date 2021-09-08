@@ -1,13 +1,7 @@
 ﻿using HornetCSV.Intarfaces;
 using HornetCSV.Modules;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HornetCSV
@@ -25,16 +19,8 @@ namespace HornetCSV
             AppTable.AllowUserToDeleteRows = true;
             AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AppTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            
-            AddColumnButton.Enabled = false;
-            AddColumnButton.Visible = false;
-            RemoveColumnButton.Enabled = false;
-            RemoveColumnButton.Visible = false;
 
-            AddRowButton.Enabled = false;
-            AddRowButton.Visible = false;
-            RemoveRowButton.Enabled = false;
-            RemoveRowButton.Visible = false;
+            ChangeVisible(false);
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -50,15 +36,7 @@ namespace HornetCSV
             ;
             if (file.ShowDialog() == DialogResult.OK)
             {
-                AddColumnButton.Visible = true;
-                AddColumnButton.Enabled = true;
-                RemoveColumnButton.Enabled = true;
-                RemoveColumnButton.Visible = true;
-
-                AddRowButton.Enabled = true;
-                AddRowButton.Visible = true;
-                RemoveRowButton.Enabled = true;
-                RemoveRowButton.Visible = true;
+                ChangeVisible(true);
 
                 path = file.FileName;
                 data = worker.OpenTable(path);
@@ -72,6 +50,17 @@ namespace HornetCSV
         {
 
             string path;
+
+            if (data == null)
+            {
+                MessageBox.Show(
+                    "Data is null",
+                    "Error Message",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
 
             SaveFileDialog file = new SaveFileDialog
             {
@@ -89,8 +78,10 @@ namespace HornetCSV
 
         private void AddColumnButton_Click(object sender, EventArgs e)
         {
-            DataColumn c = new DataColumn();
-            c.ColumnName = (data.Columns.Count).ToString();
+            DataColumn c = new DataColumn
+            {
+                ColumnName = (data.Columns.Count).ToString()
+            };
             data.Columns.Add(c);
         }
 
@@ -116,6 +107,27 @@ namespace HornetCSV
                 return;
             }
             data.Rows.RemoveAt(data.Rows.Count - 1);
+        }
+
+        private void NewTableButton_Click(object sender, EventArgs e)
+        {
+            data = new DataTable();
+
+            AppTable.DataSource = data;
+            ChangeVisible(true);
+        }
+
+        private void ChangeVisible(bool mode)
+        {
+            AddColumnButton.Visible = mode;
+            AddColumnButton.Enabled = mode;
+            RemoveColumnButton.Enabled = mode;
+            RemoveColumnButton.Visible = mode;
+
+            AddRowButton.Enabled = mode;
+            AddRowButton.Visible = mode;
+            RemoveRowButton.Enabled = mode;
+            RemoveRowButton.Visible = mode;
         }
     }
 }
