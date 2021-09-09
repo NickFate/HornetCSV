@@ -31,13 +31,13 @@ namespace HornetCSV
         {
             this.SplitOnView = new System.Windows.Forms.SplitContainer();
             this.AppTable = new System.Windows.Forms.DataGridView();
+            this.NewTableButton = new System.Windows.Forms.Button();
             this.AddRowButton = new System.Windows.Forms.Button();
             this.RemoveRowButton = new System.Windows.Forms.Button();
             this.RemoveColumnButton = new System.Windows.Forms.Button();
             this.AddColumnButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.OpenButton = new System.Windows.Forms.Button();
-            this.NewTableButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitOnView)).BeginInit();
             this.SplitOnView.Panel1.SuspendLayout();
             this.SplitOnView.Panel2.SuspendLayout();
@@ -78,6 +78,18 @@ namespace HornetCSV
             this.AppTable.Name = "AppTable";
             this.AppTable.Size = new System.Drawing.Size(1000, 681);
             this.AppTable.TabIndex = 0;
+            // 
+            // NewTableButton
+            // 
+            this.NewTableButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewTableButton.Location = new System.Drawing.Point(3, 588);
+            this.NewTableButton.Name = "NewTableButton";
+            this.NewTableButton.Size = new System.Drawing.Size(254, 23);
+            this.NewTableButton.TabIndex = 6;
+            this.NewTableButton.Text = "New Table";
+            this.NewTableButton.UseVisualStyleBackColor = true;
+            this.NewTableButton.Click += new System.EventHandler(this.NewTableButton_Click);
             // 
             // AddRowButton
             // 
@@ -150,16 +162,6 @@ namespace HornetCSV
             this.OpenButton.Text = "Open";
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
-            // 
-            // NewTableButton
-            // 
-            this.NewTableButton.Location = new System.Drawing.Point(3, 588);
-            this.NewTableButton.Name = "NewTableButton";
-            this.NewTableButton.Size = new System.Drawing.Size(254, 23);
-            this.NewTableButton.TabIndex = 6;
-            this.NewTableButton.Text = "New Table";
-            this.NewTableButton.UseVisualStyleBackColor = true;
-            this.NewTableButton.Click += new System.EventHandler(this.NewTableButton_Click);
             // 
             // MainAppView
             // 
