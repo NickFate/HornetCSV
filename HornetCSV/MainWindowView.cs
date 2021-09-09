@@ -17,7 +17,9 @@ namespace HornetCSV
             worker = new CSVTableWorker();
 
             AppTable.AllowUserToDeleteRows = true;
-            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+            
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             AppTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
 
             ChangeVisible(false);
@@ -26,6 +28,8 @@ namespace HornetCSV
         private void OpenButton_Click(object sender, EventArgs e)
         {
             
+
+
             string path;
 
             OpenFileDialog file = new OpenFileDialog
@@ -41,9 +45,17 @@ namespace HornetCSV
                 path = file.FileName;
                 data = worker.OpenTable(path);
                 AppTable.DataSource = data;
+                string[] ms = path.Split('\\');
+                string title = ms[ms.Length - 1].Replace(".csv", "");
+                Text = title;
+            }
+            for (int i = 0; i < data.Columns.Count; i++)
+            {
+                AppTable.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
 
-            
+            AppTable.AllowUserToResizeColumns = true;
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -71,6 +83,9 @@ namespace HornetCSV
             {
                 path = file.FileName;
                 worker.SaveTable(path, data);
+                string[] ms = path.Split('\\');
+                string title = ms[ms.Length - 1].Replace(".csv", "");
+                Text = title;
             }
 
             
@@ -111,10 +126,19 @@ namespace HornetCSV
 
         private void NewTableButton_Click(object sender, EventArgs e)
         {
+            
             data = new DataTable();
 
             AppTable.DataSource = data;
             ChangeVisible(true);
+            for (int i = 0; i < data.Columns.Count; i++)
+            {
+                AppTable.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
+            AppTable.AllowUserToResizeColumns = true;
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            Text = "New table";
         }
 
         private void ChangeVisible(bool mode)
