@@ -29,6 +29,7 @@ namespace HornetCSV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAppView));
             this.SplitOnView = new System.Windows.Forms.SplitContainer();
             this.AppTable = new System.Windows.Forms.DataGridView();
             this.NewTableButton = new System.Windows.Forms.Button();
@@ -170,6 +171,7 @@ namespace HornetCSV
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.SplitOnView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAppView";
             this.Text = "Hornet CSV";
             this.SplitOnView.Panel1.ResumeLayout(false);
