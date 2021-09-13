@@ -27,8 +27,11 @@ namespace HornetCSV
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            
 
+            if (!DataCheck())
+            {
+                return;
+            }
 
             string path;
 
@@ -63,14 +66,8 @@ namespace HornetCSV
 
             string path;
 
-            if (data == null)
+            if (!DataCheck())
             {
-                MessageBox.Show(
-                    "Data is null",
-                    "Error Message",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                    );
                 return;
             }
 
@@ -126,7 +123,19 @@ namespace HornetCSV
 
         private void NewTableButton_Click(object sender, EventArgs e)
         {
-            
+            if (data != null)
+            {
+                if (MessageBox.Show(
+                    "Вы можете потерять несохраненные данные",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning
+                    ) != DialogResult.OK)
+                {
+                    return;
+                }
+            }
+
             data = new DataTable();
 
             AppTable.DataSource = data;
@@ -138,7 +147,7 @@ namespace HornetCSV
 
             AppTable.AllowUserToResizeColumns = true;
             AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            Text = "New table";
+            Text = "Новая таблица";
         }
 
         private void ChangeVisible(bool mode)
@@ -152,6 +161,23 @@ namespace HornetCSV
             AddRowButton.Visible = mode;
             RemoveRowButton.Enabled = mode;
             RemoveRowButton.Visible = mode;
+        }
+
+        private bool DataCheck()
+        {
+            if (data != null)
+            {
+                if (MessageBox.Show(
+                    "Вы можете потерять несохраненные данные",
+                    "",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning
+                    ) != DialogResult.OK)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

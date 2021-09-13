@@ -87,7 +87,7 @@ namespace HornetCSV
             this.NewTableButton.Name = "NewTableButton";
             this.NewTableButton.Size = new System.Drawing.Size(254, 23);
             this.NewTableButton.TabIndex = 6;
-            this.NewTableButton.Text = "New Table";
+            this.NewTableButton.Text = "Новая таблица";
             this.NewTableButton.UseVisualStyleBackColor = true;
             this.NewTableButton.Click += new System.EventHandler(this.NewTableButton_Click);
             // 
@@ -99,7 +99,7 @@ namespace HornetCSV
             this.AddRowButton.Name = "AddRowButton";
             this.AddRowButton.Size = new System.Drawing.Size(254, 23);
             this.AddRowButton.TabIndex = 5;
-            this.AddRowButton.Text = "Add row";
+            this.AddRowButton.Text = "Добавить строку";
             this.AddRowButton.UseVisualStyleBackColor = true;
             this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
@@ -111,7 +111,7 @@ namespace HornetCSV
             this.RemoveRowButton.Name = "RemoveRowButton";
             this.RemoveRowButton.Size = new System.Drawing.Size(254, 23);
             this.RemoveRowButton.TabIndex = 4;
-            this.RemoveRowButton.Text = "Remove row";
+            this.RemoveRowButton.Text = "Удалить строку";
             this.RemoveRowButton.UseVisualStyleBackColor = true;
             this.RemoveRowButton.Click += new System.EventHandler(this.RemoveRowButton_Click);
             // 
@@ -123,7 +123,7 @@ namespace HornetCSV
             this.RemoveColumnButton.Name = "RemoveColumnButton";
             this.RemoveColumnButton.Size = new System.Drawing.Size(254, 23);
             this.RemoveColumnButton.TabIndex = 3;
-            this.RemoveColumnButton.Text = "Remove column";
+            this.RemoveColumnButton.Text = "Удалить колонку";
             this.RemoveColumnButton.UseVisualStyleBackColor = true;
             this.RemoveColumnButton.Click += new System.EventHandler(this.RemoveColumnButton_Click);
             // 
@@ -135,7 +135,7 @@ namespace HornetCSV
             this.AddColumnButton.Name = "AddColumnButton";
             this.AddColumnButton.Size = new System.Drawing.Size(254, 23);
             this.AddColumnButton.TabIndex = 2;
-            this.AddColumnButton.Text = "Add column";
+            this.AddColumnButton.Text = "Добавить колонку";
             this.AddColumnButton.UseVisualStyleBackColor = true;
             this.AddColumnButton.Click += new System.EventHandler(this.AddColumnButton_Click);
             // 
@@ -147,7 +147,7 @@ namespace HornetCSV
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(254, 23);
             this.SaveButton.TabIndex = 1;
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
@@ -159,7 +159,7 @@ namespace HornetCSV
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(254, 23);
             this.OpenButton.TabIndex = 0;
-            this.OpenButton.Text = "Open";
+            this.OpenButton.Text = "Открыть";
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -167,6 +167,7 @@ namespace HornetCSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.SplitOnView);
             this.Name = "MainAppView";
