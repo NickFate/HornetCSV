@@ -11,6 +11,35 @@ namespace HornetCSV
         private DataTable data;
         private ICSVWorker worker;
 
+
+        public MainAppView(string path)
+        {
+
+            InitializeComponent();
+            worker = new CSVTableWorker();
+
+            AppTable.AllowUserToDeleteRows = true;
+
+
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            AppTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+
+            ChangeVisible(false);
+
+            data = worker.OpenTable(path);
+            AppTable.DataSource = data;
+            string[] ms = path.Split('\\');
+            string title = ms[ms.Length - 1].Replace(".csv", "");
+            Text = title;
+            for (int i = 0; i<data.Columns.Count; i++)
+            {
+                AppTable.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
+            AppTable.AllowUserToResizeColumns = true;
+            AppTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+        }
+
         public MainAppView()
         {
             InitializeComponent();

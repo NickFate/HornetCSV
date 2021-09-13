@@ -12,10 +12,15 @@ namespace HornetCSV
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (args.Length > 0)
+            {
+                Application.Run(new MainAppView(args[0]));
+                return;
+            }
             Application.Run(new MainAppView());
         }
     }
