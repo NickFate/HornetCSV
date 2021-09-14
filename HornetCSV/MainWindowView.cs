@@ -95,10 +95,7 @@ namespace HornetCSV
 
             string path;
 
-            if (!DataCheck())
-            {
-                return;
-            }
+            
 
             SaveFileDialog file = new SaveFileDialog
             {
@@ -152,17 +149,9 @@ namespace HornetCSV
 
         private void NewTableButton_Click(object sender, EventArgs e)
         {
-            if (data != null)
+            if (!DataCheck())
             {
-                if (MessageBox.Show(
-                    "Вы можете потерять несохраненные данные",
-                    "",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Warning
-                    ) != DialogResult.OK)
-                {
-                    return;
-                }
+                return;
             }
 
             data = new DataTable();
